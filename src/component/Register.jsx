@@ -1,33 +1,33 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export const LoginPage = () => {
+export const Register = () => {
   const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
-    const response = await fetch('http://localhost:3001/api/login', {
+    const response = await fetch('http://localhost:3001/api/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ username, password, email }),
     });
   
     if (response.ok) {
-      const data = await response.json();
-      localStorage.setItem('token', data.token);
-      navigate('/');
+      navigate('/login');
     } else {
     }
   };
+
   return (
     <div className="center-wrapper">
-      <div className="login">
-        <h2>Вход</h2>
-        <form onSubmit={handleLogin}>
+      <div className="register">
+        <h2>Регистрация</h2>
+        <form onSubmit={handleRegister}>
           <input
             type="text"
             placeholder="Имя пользователя"
@@ -35,16 +35,19 @@ export const LoginPage = () => {
             onChange={(e) => setUsername(e.target.value)}
           />
           <input
+            type="email"
+            placeholder="Почта пользователя"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
             type="password"
             placeholder="Пароль"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button type="submit">Войти</button>
+          <button type="submit">Зарегистрироваться</button>
         </form>
-        <div className="no-account">
-          <p>Нет аккаунта? <a href="/register">Создайте его</a></p>
-        </div>
       </div>
     </div>
   );

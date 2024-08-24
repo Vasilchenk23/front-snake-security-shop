@@ -2,6 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Header } from "./component/Header";
 import { LoginPage } from "./component/LoginPage";
+import { Register } from './component/Register';
+import { Footer } from './component/Footer';
+import { ProductList } from './component/ProductCard';
 import '../src/App.css'
 
 function App() {
@@ -9,9 +12,11 @@ function App() {
     <Router>
       <Header/>
       <Routes>
+        <Route path='/' element={<ProductList/>}/>
         <Route path="/login" element={<LoginPage />} />
-        {/* Добавьте другие маршруты здесь */}
+        <Route path="/register" element={<Register />} />
       </Routes>
+      <Footer/>
     </Router>
   );
 }
