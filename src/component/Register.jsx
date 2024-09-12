@@ -9,17 +9,18 @@ export const Register = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    const response = await fetch('https://backend-snake-security-shop-production.up.railway.app/api/register', {
+    const response = await fetch('http://localhost:5000/api/register', { // Используйте URL вашего сервера
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ username, password, email }),
     });
-  
+
     if (response.ok) {
       navigate('/login');
     } else {
+      alert('Error registering user');
     }
   };
 

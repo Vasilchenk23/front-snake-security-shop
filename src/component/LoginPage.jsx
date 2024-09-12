@@ -8,21 +8,21 @@ export const LoginPage = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    const response = await fetch('https://backend-snake-security-shop-production.up.railway.app/api/login', {
+    const response = await fetch('http://localhost:5000/api/login', { // Используйте URL вашего сервера
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ username, password }),
     });
-  
+
     if (response.ok) {
-      const data = await response.json();
-      localStorage.setItem('token', data.token);
-      navigate('/');
+      navigate('/profile');
     } else {
+      alert('Invalid credentials');
     }
   };
+
   return (
     <div className="center-wrapper">
       <div className="login">
