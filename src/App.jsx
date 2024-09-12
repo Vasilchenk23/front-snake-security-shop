@@ -5,6 +5,7 @@ import { LoginPage } from "./component/LoginPage";
 import { Register } from './component/Register';
 import { Footer } from './component/Footer';
 import { ProductList } from './component/ProductCard';
+import { AdminPanel } from './component/AdminPanel';
 import '../src/App.css'
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path='/' element={<ProductList/>}/>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/admin" element={<AdminPanel/>} />
       </Routes>
       <Footer/>
     </Router>

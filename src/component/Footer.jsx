@@ -20,8 +20,8 @@ export const Footer = () => {
         </div>
         <div className="footer-section contact">
           <h3>Контактная информация</h3>
-          <p>Телефон: +38 (044) 123-45-67</p>
-          <p>Email: support@yourstore.com</p>
+          <p>Телефон: +38 (068) 592-98-20</p>
+          <p>Email: vasilchenko.maksim@gmail.com</p>
         </div>
         <div className="footer-section social">
           <h3>Мы в социальных сетях</h3>
