@@ -354,3 +354,144 @@ a {
 .add-button:hover {
   background-color: #0056b3;
 }
+
+.card-containers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.profile-container {
+  display: flex;
+  background-color: #0A1A2F;
+  color: white;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background-color: #173B6C; 
+  padding: 20px;
+  width: 250px;
+}
+
+.sidebar h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  margin-bottom: 15px;
+}
+
+.sidebar nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.main-content {
+  padding: 20px;
+  width: 100%;
+}
+
+.main-content h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  font-size: 18px;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.save-btn {
+  background-color: #FF4C4C; 
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  align-self: flex-start;
+}
+
+.save-btn:hover {
+  background-color: #FF6666;
+}
+
+.product-detail {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.product-name {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.product-image {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.product-description {
+  margin: 10px 0;
+}
+
+.product-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #28a745;
+}
+
+.buy-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.buy-button:hover {
+  background-color: #0056b3;
+}
+
+.reviews, .related-products {
+  margin-top: 20px;
+}
+
+.not-found {
+  text-align: center;
+  font-size: 18px;
+  color: red;
+}
+
+

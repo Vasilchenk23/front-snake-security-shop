@@ -21,7 +21,7 @@ export const Footer = () => {
         <div className="footer-section contact">
           <h3>Контактная информация</h3>
           <p>Телефон: +38 (068) 592-98-20</p>
-          <p>Email: vasilchenko.maksim@gmail.com</p>
+          <p>Email: vasilchenko.maksim374@gmail.com</p>
         </div>
         <div className="footer-section social">
           <h3>Мы в социальных сетях</h3>

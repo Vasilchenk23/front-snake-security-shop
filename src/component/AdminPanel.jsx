@@ -5,11 +5,17 @@ export const AdminPanel = () => {
   const [products, setProducts] = useState([]);
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
+  const [image, setImage] = useState('');
   const [price, setPrice] = useState('');
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [login, setLogin] = useState('');
+  const [password, setPassword] = useState('');
 
   useEffect(() => {
-    fetchProducts();
-  }, []);
+    if (isAuthenticated) {
+      fetchProducts();
+    }
+  }, [isAuthenticated]);
 
   const fetchProducts = async () => {
     try {
@@ -22,20 +28,30 @@ export const AdminPanel = () => {
 
   const handleAddProduct = async (e) => {
     e.preventDefault();
+    
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('description', description);
+    formData.append('image', image);  
+    formData.append('price', price);
+  
     try {
-      await axios.post('http://localhost:5000/api/products', {
-        name,
-        description,
-        price,
+      await axios.post('http://localhost:5000/api/products', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
       });
+      
       setName('');
       setDescription('');
+      setImage('');
       setPrice('');
       fetchProducts();
     } catch (error) {
       console.error('Error adding product:', error);
     }
   };
+  
 
   const handleDeleteProduct = async (id) => {
     try {
@@ -45,6 +61,43 @@ export const AdminPanel = () => {
       console.error('Error deleting product:', error);
     }
   };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    if (login === 'admin' && password === '123456') {
+      setIsAuthenticated(true);
+    } else {
+      alert('Invalid login or password');
+    }
+  };
+
+  if (!isAuthenticated) {
+    return (
+      <div className="login-container">
+        <form onSubmit={handleLogin} className="form-container">
+          <input
+            type="text"
+            name="login"
+            placeholder="Login"
+            value={login}
+            onChange={(e) => setLogin(e.target.value)}
+            className="input-field"
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="input-field"
+          />
+          <button type="submit" className="login-button">
+            Login
+          </button>
+        </form>
+      </div>
+    );
+  }
 
   return (
     <div className="admin-panel">
@@ -67,6 +120,12 @@ export const AdminPanel = () => {
           className="input-field"
         />
         <input
+          type="file"
+          name="image"
+          onChange={(e) => setImage(e.target.files[0])} 
+          className="input-field"
+        />
+        <input
           type="number"
           name="price"
           placeholder="Price"
@@ -80,19 +139,18 @@ export const AdminPanel = () => {
       </form>
       
       <h2 className="title">Product List</h2>
-      <ul className="product-list">
+      <div className="card-containers">
         {products.map(product => (
-          <li key={product.id} className="product-item">
-            <span>{product.name}</span>
-            <span>{product.description}</span>
-            <span>{product.price}</span>
+          <div key={product.id} className="product-cards">
+            <h3>{product.name}</h3>
+            <p>{product.description}</p>
+            <p><strong>Price:</strong> ${product.price}</p>
             <button onClick={() => handleDeleteProduct(product.id)} className="delete-button">
               Delete
             </button>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
-
