@@ -138,7 +138,7 @@ export const AdminPanel = () => {
         </button>
       </form>
       
-      <h2 className="title">Product List</h2>
+      {/* <h2 className="title">Product List</h2>
       <div className="card-containers">
         {products.map(product => (
           <div key={product.id} className="product-cards">
@@ -150,7 +150,7 @@ export const AdminPanel = () => {
             </button>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
