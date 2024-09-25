@@ -8,13 +8,17 @@ import { ProductList } from './component/ProductCard';
 import { AdminPanel } from './component/AdminPanel';
 import {Profile} from './component/Profile';
 import '../src/App.css'
+import { AboutUs } from './component/AboutUs';
+import { PrivacyPolicy } from './component/PrivacyPolicy';
 
 function App() {
   return (
     <Router>
-      <Header/>
+      <Header />
       <Routes>
         <Route path='/' element={<ProductList/>}/>
+        <Route path='/about' element={<AboutUs/>}/>
+        <Route path='/privacy' element={<PrivacyPolicy/>}/>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<Register />} />
         <Route path="/admin" element={<AdminPanel/>} />

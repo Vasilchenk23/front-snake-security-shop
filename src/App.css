@@ -4,6 +4,7 @@ header {
   align-items: center;
   height: 100px;
   background: #1F4F8C;
+  width: 100%;
 }
 
 .catalog {
@@ -80,11 +81,11 @@ body{
   background: #2A2E35; 
 }
 
-.setting {
+/* .setting {
   width: 300px;
   display: flex;
   justify-content: space-between;
-}
+} */
 
 .center-wrapper {
   display: flex;
@@ -324,7 +325,7 @@ a {
 .title {
   font-size: 24px;
   margin-bottom: 20px;
-  color: #333;
+  /* color: #333; */
 }
 
 .form-container {
@@ -494,4 +495,94 @@ input {
   color: red;
 }
 
+.about-us-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #0B2036;
+  color: white;
+}
 
+.logo-section {
+  margin-bottom: 20px;
+}
+
+.company-logo {
+  width: 150px;
+  height: auto;
+}
+
+.about-text-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.about-title {
+  font-size: 24px;
+  font-weight: bold;
+  /* color: #333; */
+}
+
+.about-description {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.advantages-section {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.advantages-title {
+  font-size: 20px;
+  font-weight: bold;
+  /* color: #333; */
+}
+
+.advantages-list {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.advantages-list li {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
+}
+.privacy-policy-container {
+  padding: 20px;
+  background-color: #0B2036;
+  color: white;
+  max-width: 800px;
+  margin: auto;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  /* color: #333; */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.date {
+  font-size: 16px;
+  color: #777;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  /* color: #333; */
+  margin-top: 20px;
+}
+
+ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
